@@ -2,7 +2,6 @@ export const Header = (props) => {
   const {heroBox} = props;
   const heroboxImage = heroBox[0].image
   const imageUrl = new URL(heroboxImage)
-  console.log(imageUrl)
   return (
     <header id='header'>
       <div className='intro' style={{background:`url(${imageUrl.href})`}}>

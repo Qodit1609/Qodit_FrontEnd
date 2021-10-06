@@ -1,0 +1,69 @@
+#service .service-bg {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 50vh;
+  }
+  
+  #service .fw-light {
+    color: #fff;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    padding-top: 70px;
+  }
+  
+  #service .lead {
+    color: #fff;
+    font-weight: 400 !important;
+    padding-top: 5px;
+  }
+
+  #service .sec-service{
+      padding-top: 30px;
+  }
+  #service .web-content{
+     padding: 50px 0px;
+  }
+  #service .web-content p{
+    text-align: justify;
+    padding: 20px 0px;
+    line-height: 30px;
+ }
+
+  #service .web-image img{
+    max-width: 100%;
+    height: 400px;
+    float: right;
+  }
+
+  #service .service-image img{
+    max-width: 100%;
+    height: 400px;
+  }
+
+  
+  #service .web-bg{
+    /* background: linear-gradient(to right, #434343, #000000); */
+    background: #37474F
+    }
+
+  #service .web-service{    
+      color: #fff;
+      padding: 50px 0px;
+  }
+  #service .web-service p{    
+    color: #fff;
+    text-align: justify;
+    padding: 20px 0px;
+    line-height: 30px;
+}
+  #service .web-service h2{
+    color: #fff;
+}
+
+  @media only screen and (max-width: 450px){
+    #service .web-content{
+        padding: 0px !important;
+     }
+  }

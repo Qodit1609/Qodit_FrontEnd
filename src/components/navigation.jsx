@@ -21,9 +21,8 @@ export const Navigation = withRouter((props) => {
             <span className='icon-bar'></span>
             <span className='icon-bar'></span>
           </button>
-          <Link to='/'>
-          <a className='navbar-brand page-scroll' href='#page-top'>
-          Qodit</a>
+          <Link  className='navbar-brand page-scroll' to='/'>
+          Qodit
           </Link>
           {' '}
         </div>
@@ -35,9 +34,9 @@ export const Navigation = withRouter((props) => {
           <ul className='nav navbar-nav navbar-right'>
             {navBar && navBar.map( data => {
             return (<li>
-              <a href={`#${data.body}`} className='page-scroll'>
+              <Link to={`${data.body}`} className='page-scroll'>
                 {data.title}
-              </a>
+              </Link>
             </li>)}) }
             <li> 
               <Link to="/career" style={{ textDecoration: 'none' }}

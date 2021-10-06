@@ -3,7 +3,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const Contact = () => {
+export const ContactUs = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('') 
@@ -13,7 +13,7 @@ export const Contact = () => {
       else if(name === 'email') setEmail(value)
         else setMessage(value)
   }
-  const data = {name, email, message}
+  const data = {name, email, message,}
   const handleSubmit = async (e) => {
     e.preventDefault()
     const API = 'https://qoditdev.herokuapp.com';
