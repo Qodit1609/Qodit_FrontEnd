@@ -133,6 +133,8 @@ transition: transform .5s ;
 padding: 10px;
 display: 'flex';
 flex-wrap: 'wrap';
+z-index: 3;
+margin-top: -4%;
 }
 
 #standard-basic{

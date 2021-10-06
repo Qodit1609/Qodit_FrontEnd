@@ -1,6 +1,13 @@
 import React, {useEffect} from "react";
 import "./MoreServices.css";
-import Webdevelopment from "../../../Assets/Img/temp.png"
+import { BackgroundSVG } from "../BackgroundSVG";
+import cloud from './image/cloud.png'
+import dataEngineer from './image/data-engineering.png'
+import mvp from './image/mvp.png'
+import newProductDevelopment from './image/new-product-development.png'
+import systemDevelopment from './image/system-development.png'
+import webDesigner from './image/web-designer.png'
+import webDevelopment from './image/web-development.png'
 
 const MoreServices = () => {
 
@@ -14,21 +21,18 @@ const MoreServices = () => {
       }, [])
   return (
     <div id="service">
-        <div style={{marginTop:'-10%', position:'absolute',width:'100%'}}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#37474F" fill-opacity="1" d="M0,64L48,85.3C96,107,192,149,288,160C384,171,480,149,576,160C672,171,768,213,864,229.3C960,245,1056,235,1152,218.7C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#37474F" fill-opacity="1" d="M0,288L24,245.3C48,203,96,117,144,90.7C192,64,240,96,288,122.7C336,149,384,171,432,160C480,149,528,107,576,122.7C624,139,672,213,720,224C768,235,816,181,864,170.7C912,160,960,192,1008,181.3C1056,171,1104,117,1152,96C1200,75,1248,85,1296,112C1344,139,1392,181,1416,202.7L1440,224L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>
-          </div>
+     <BackgroundSVG/>
       <div className="service-bg cover-background"  style={{zIndex: 1,
     position:' relative', paddingTop:'5rem'}}>
         <div className="container h-100">
           <div className="row h-100 align-items-center">
             <div className="col-12 text-center" data-aos="zoom-in">
               <h1 className="fw-light">Our Services</h1>
-              <p className="lead">
+              {/* <p className="lead">
                 We provide industry-specific and need-based services, which
                 allows us to deliver tailor-made solutions. We serve customers
                 ranging from small individual startups to big corporate houses.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -44,8 +48,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                     <i class="fas fa-code" style={style.icon} ></i>
-                         {/* <img src={Webdevelopment} alt="" /> */}
+                         <img src={webDevelopment} alt="" />
                      </div>
                  </div>
              </div>
@@ -56,13 +59,13 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={systemDevelopment} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
                      <div className="web-service">
                          <h2>System Development</h2>
-                         <p>Qodit follows the procedure of defining, designing, testing, and implementing a new software application or program. It includes the internal Development of customized systems, the creation of database systems.TheRapidHire works for the enhancement and productivity of the organization for the satisfaction of its clients.</p>
+                         <p>Qodit follows the procedure of defining, designing, testing, and implementing a new software application or program. It includes the internal Development of customized systems, the creation of database systems.Qodit works for the enhancement and productivity of the organization for the satisfaction of its clients.</p>
                      </div>
                  </div>
              </div>
@@ -79,7 +82,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={newProductDevelopment} alt="" />
                      </div>
                  </div>
              </div>
@@ -90,7 +93,7 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={mvp} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
@@ -113,7 +116,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={dataEngineer} alt="" />
                      </div>
                  </div>
              </div>
@@ -124,7 +127,7 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={cloud} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
@@ -147,7 +150,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={Webdevelopment} alt="" />
+                         <img src={webDesigner} alt="" />
                      </div>
                  </div>
              </div>

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BackgroundSVG } from '../BackgroundSVG';
 
 export const ContactUs = () => {
   const [name, setName] = useState('')
@@ -32,6 +33,18 @@ export const ContactUs = () => {
   }
   return (
     <div>
+        <BackgroundSVG/>
+        <div className="service-bg cover-background"  style={{zIndex: 1,
+    position:' relative', paddingTop:'7rem'}}>
+        <div className="container h-100">
+          <div className="row h-100 align-items-center">
+            <div className="col-12 text-center" data-aos="zoom-in">
+              <h1 style={{color:'white',paddingTop:'2rem'}} className="fw-light">Contact Us</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style={{height:'21rem'}}></div>
       <div id='contact_us'>
        <ToastContainer
         position="top-right"

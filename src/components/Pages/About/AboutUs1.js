@@ -15,7 +15,7 @@ const NewAboutUs = () => {
         "  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1700s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
     const Our_Mission =
-        "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. TheRapidHire has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
+        "   Our mission is to provide a supercilious support to our customer through our service. We are always aware of new trends in the field of security and are committed to applying it in our solution. We always improvise our services by surveying the interest of our customer. Our goal is to attain massive upgrades and improvements being honest to our principle. Qodit has set certain standards and regulations to be followed so that we will always be giving our priorities to the standards and will always work according to the guidelines set by the govt. and other corresponding authority.";
 
     const Values3 =
         " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1700s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
@@ -64,13 +64,13 @@ const NewAboutUs = () => {
                             <div className="who-we">
                                 <h1>Who we are</h1>
                                 <p>
-                                    TheRapidHire is a software development and IT outsourcing
-                                    company based in India. TheRapidHire takes an energetic,
+                                    Qodit is a software development and IT outsourcing
+                                    company based in India. Qodit takes an energetic,
                                     collaborative strategy to create and customize solutions
                                     across the digital value chain. We aim to create a network of
                                     businesses that help each other to acquire more customers.
                                     Giving a better idea of making your online presence better,
-                                    TheRapidHire company helps you with quality service at minimal
+                                    Qodit company helps you with quality service at minimal
                                     prices and complimentary with great satisfaction.
                                 </p>
                             </div>

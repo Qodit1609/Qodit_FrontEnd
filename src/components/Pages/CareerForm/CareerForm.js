@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import {
   Box,
   FormControl,
@@ -13,7 +14,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import { grey, blueGrey, } from "@material-ui/core/colors";
+import { BackgroundSVG } from "../BackgroundSVG";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,6 +32,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 export const CareerForm = (props) => {
+  const [name, setName]=useState("")
+  const [email, setEmail]=useState("")
+  const [phone_number, setMobile]=useState("")
+  const [technology, setTechnology]=useState("")
+  const [description, setDescription]=useState("")
+  const [upload, setFile]=useState("")
+
+  async function submitForm()
+  {
+    console.warn(name,email,phone_number,technology,description,upload)
+    const formData = {name,email,description,phone_number,technology,upload}
+    let result= await fetch ("https://qoditdev.herokuapp.com/careerform",{
+      method:'POST',
+      body:formData
+  });
+  alert("data has been saved")
+  }
+
+
   const classes = useStyles();
   const theme = createTheme({
     root: {
@@ -47,33 +67,40 @@ export const CareerForm = (props) => {
 
   const style ={
     form:{
-      backgroundColor: '#37474F',
+      backgroundColor: '#000',
 	  borderRadius: '2rem',
 	  padding: '60px 40px 10px 40px',
-    paddingTop:'10rem',
+    // paddingTop:'10rem',
     }
   }
-  const secondary = grey['#fafafa']
   return (
     <div className="careerFormMainDiv">
-<div style={{position:'absolute',width:'100%'}}>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#273036" fill-opacity="1" d="M0,160L60,154.7C120,149,240,139,360,160C480,181,600,235,720,224C840,213,960,139,1080,122.7C1200,107,1320,149,1380,170.7L1440,192L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+      <BackgroundSVG/>
+      <div className="service-bg cover-background"  style={{zIndex: 1,
+    position:' relative', paddingTop:'8rem'}}>
+        <div className="container h-100">
+          <div className="row h-100 align-items-center">
+            <div className="col-12 text-center" data-aos="zoom-in">
+              <h1 style={{color:'white'}} className="fw-light">Apply Now</h1>
+            </div>
+          </div>
+        </div>
       </div>
-            {/* <ApplyNow/> */}
       <div className="typographyCSS" >
         <CssBaseline />
         <Container maxWidth="sm">
           <ThemeProvider theme={theme}>
             <Typography component="div" style={style.form}>
-              <h1 className="careerHeading"> APPLY NOW</h1>
+              {/* <h1 className="careerHeading"> APPLY NOW</h1> */}
               <form style={{ textAlign: "justify", margin: "54px" }}>
                 <div>
                   <FormControl fullWidth className={classes.margin}>
                     <InputLabel htmlFor="standard-basic">Your Name</InputLabel>
                     <Input
                       id="standard-basic"
-                      onChange=""
+                      onChange={e => setName(e.target.value)}
                       color="secondary"
+                      autoFocus={true}
                       startAdornment={
                         <InputAdornment  position="start">
                           Hello! I'm
@@ -85,7 +112,7 @@ export const CareerForm = (props) => {
                     <InputLabel htmlFor="standard-basic">Message</InputLabel>
                     <Input
                       id="standard-basic"
-                      onChange=""
+                      onChange={e => setDescription(e.target.value)}
                       color="secondary"
                       startAdornment={
                         <InputAdornment position="start">
@@ -100,7 +127,7 @@ export const CareerForm = (props) => {
                     </InputLabel>
                     <Input
                       id="standard-basic"
-                      onChange=""
+                      onChange={e => setEmail(e.target.value)}
                       color="secondary"
                       startAdornment={
                         <InputAdornment position="start">
@@ -115,11 +142,26 @@ export const CareerForm = (props) => {
                     </InputLabel>
                     <Input
                       id="standard-basic"
-                      onChange=""
+                      onChange={e => setMobile(e.target.value)}
                       color="secondary"
                       startAdornment={
                         <InputAdornment position="start">
                           and Mobile No.
+                        </InputAdornment>
+                      }
+                    />
+                  </FormControl>
+                  <FormControl fullWidth className={classes.margin}>
+                    <InputLabel htmlFor="standard-basic">
+                      Technologies
+                    </InputLabel>
+                    <Input
+                      id="standard-basic"
+                      onChange={e => setMobile(e.target.value)}
+                      color="secondary"
+                      startAdornment={
+                        <InputAdornment position="start">
+                          Technologies
                         </InputAdornment>
                       }
                     />
@@ -134,9 +176,9 @@ export const CareerForm = (props) => {
                 <ButtonGroup>
                   <Button variant="contained" component="label">
                     Upload Resume
-                    <input type="file" hidden />
+                    <input type="file" onChange = {(e)=>setFile(e.target.files[0])} />
                   </Button>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" onClick={submitForm} color="primary">
                   Submit
                 </Button>
                 </ButtonGroup>

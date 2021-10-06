@@ -98,7 +98,7 @@ line-height: 26px;
   height: 80%;
   position: relative;
   padding: 30px;
-  box-shadow: rgb(0 0 0 / 15%) 0 2px 8px;
+  box-shadow: rgb(255 255 255 / 30%) 0 2px 8px;
   margin-bottom: 30px;
   text-align: center;
   color: #fff;
@@ -109,7 +109,7 @@ line-height: 26px;
 }
 
 .about-sec{
-  background:#37474F;
+  background:#000;
 }
 
 #new-about .vision-mission-content h3 {
