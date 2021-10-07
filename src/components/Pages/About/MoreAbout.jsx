@@ -4,7 +4,7 @@ import Banner from "./Banner"
 export const MoreAboutUs = (props) => {
     return (
       <>        
-        <Banner/>
+        {/* <Banner/> */}
         <NewAboutUs/>
         </>
 

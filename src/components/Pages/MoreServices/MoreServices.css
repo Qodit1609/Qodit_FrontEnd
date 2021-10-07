@@ -1,24 +1,3 @@
-#service .service-bg {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 50vh;
-  }
-  
-  #service .fw-light {
-    color: #fff;
-    font-weight: 900 !important;
-    text-transform: uppercase;
-    padding-top: 70px;
-  }
-  
-  #service .lead {
-    color: #fff;
-    font-weight: 400 !important;
-    padding-top: 5px;
-  }
-
   #service .sec-service{
       padding-top: 30px;
   }
@@ -66,4 +45,11 @@
     #service .web-content{
         padding: 0px !important;
      }
+     #service .service-image img{
+      height: auto !important;
+    }
+    #service .web-image img{
+      height: auto !important;
+    }
+    
   }

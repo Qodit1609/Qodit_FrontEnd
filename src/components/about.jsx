@@ -1,3 +1,7 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 export const About = (props) => {
   const aboutUs =props.aboutUs[0]
   const {chooseus} = props 
@@ -9,7 +13,7 @@ export const About = (props) => {
         <div className='row'>
           <div className='col-xs-12 col-md-6'>
             {' '}
-            <img src={aboutUs.image} className='img-responsive' alt='' />{' '}
+            <img data-aos="fade-up-right" data-aos-duration="3000" src={aboutUs.image} className='img-responsive' alt='' />{' '}
           </div>
           <div className='col-xs-12 col-md-6'>
             <div className='about-text'>

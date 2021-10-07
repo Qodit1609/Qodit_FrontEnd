@@ -3,6 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPage = (props) => {
   const style ={
+    
     li:{
       color: '#37474F',
       fontSize:'1.5rem'
@@ -10,6 +11,7 @@ const FooterPage = (props) => {
     contactUsInLine: {
       display:'inline-block',color:'#37474F',fontWeight: 400, fontSize:'1.5rem'
     }
+    
   }
   return (
     <div>

@@ -26,13 +26,8 @@ const MoreServices = () => {
     position:' relative', paddingTop:'5rem'}}>
         <div className="container h-100">
           <div className="row h-100 align-items-center">
-            <div className="col-12 text-center" data-aos="zoom-in">
+            <div className="col-12 text-center">
               <h1 className="fw-light">Our Services</h1>
-              {/* <p className="lead">
-                We provide industry-specific and need-based services, which
-                allows us to deliver tailor-made solutions. We serve customers
-                ranging from small individual startups to big corporate houses.
-              </p> */}
             </div>
           </div>
         </div>
@@ -48,7 +43,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={webDevelopment} alt="" />
+                         <img  data-aos="fade-right" data-aos-duration="1500" src={webDevelopment} alt="" />
                      </div>
                  </div>
              </div>
@@ -59,7 +54,7 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={systemDevelopment} alt="" />
+                         <img data-aos="fade-left" data-aos-duration="1500" src={systemDevelopment} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
@@ -81,8 +76,8 @@ const MoreServices = () => {
                      </div>
                  </div>
                  <div className="col-md-6">
-                     <div className="web-image">
-                         <img src={newProductDevelopment} alt="" />
+                     <div  className="web-image">
+                         <img data-aos="fade-left" data-aos-duration="1500" src={newProductDevelopment} alt="" />
                      </div>
                  </div>
              </div>
@@ -93,7 +88,7 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={mvp} alt="" />
+                         <img data-aos="fade-right" data-aos-duration="1500" src={mvp} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
@@ -116,7 +111,7 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={dataEngineer} alt="" />
+                         <img data-aos="fade-left" data-aos-duration="1500" src={dataEngineer} alt="" />
                      </div>
                  </div>
              </div>
@@ -127,7 +122,7 @@ const MoreServices = () => {
              <div className="row">
                  <div className="col-md-6">
                      <div className="service-image">
-                         <img src={cloud} alt="" />
+                         <img data-aos="fade-right" data-aos-duration="1500" src={cloud} alt="" />
                      </div>
                  </div>
                  <div className="col-md-6">
@@ -150,7 +145,8 @@ const MoreServices = () => {
                  </div>
                  <div className="col-md-6">
                      <div className="web-image">
-                         <img src={webDesigner} alt="" />
+                         <img data-aos="fade-left
+                     " data-aos-duration="1500"  src={webDesigner} alt="" />
                      </div>
                  </div>
              </div>

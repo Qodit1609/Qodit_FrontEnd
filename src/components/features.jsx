@@ -19,7 +19,7 @@ export const Features = (props) => {
                 <div key={`${d.id}-${i}`} className='col-xs-12 col-md-3'>
                   {' '}
                 
-                  <i className={d.alt}></i>
+                  <i data-aos="flip-right" data-aos-duration="1500" className={d.alt}></i>
                   <h3>{d.title}</h3>
                   <p style={paraLength}>{d.body}</p>
                 </div>

@@ -1,4 +1,4 @@
-import { Link, withRouter } from "react-router-dom"
+import { Link, NavLink, withRouter } from "react-router-dom"
 
 export const Navigation = withRouter((props) => {
   const {navBar} = props;
@@ -34,9 +34,9 @@ export const Navigation = withRouter((props) => {
           <ul className='nav navbar-nav navbar-right'>
             {navBar && navBar.map( data => {
             return (<li>
-              <Link to={`${data.body}`} className='page-scroll'>
+              <NavLink exact activeClassName="active" to={`${data.body}`} className='page-scroll'>
                 {data.title}
-              </Link>
+              </NavLink>
             </li>)}) }
             <li> 
               <Link to="/career" style={{ textDecoration: 'none' }}

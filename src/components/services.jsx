@@ -17,7 +17,7 @@ export const Services = (props) => {
             ? showServices.map((d, i) => (
                 <div key={`${d.id}-${i}`} className='col-md-4'>
                   {' '}
-                  <i className={`${d.alt}`}>
+                  <i data-aos="flip-up"  data-aos-duration="1500" className={`${d.alt}`}>
                    </i>
                   <div className='service-desc'>
                     <h3>{d.title}</h3>

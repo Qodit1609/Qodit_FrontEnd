@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import React, { useState , useEffect } from "react";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BackgroundSVG } from '../BackgroundSVG';
 
 export const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('') 
@@ -35,16 +38,16 @@ export const ContactUs = () => {
     <div>
         <BackgroundSVG/>
         <div className="service-bg cover-background"  style={{zIndex: 1,
-    position:' relative', paddingTop:'7rem'}}>
+    position:' relative', paddingTop:'5rem'}}>
         <div className="container h-100">
           <div className="row h-100 align-items-center">
             <div className="col-12 text-center" data-aos="zoom-in">
-              <h1 style={{color:'white',paddingTop:'2rem'}} className="fw-light">Contact Us</h1>
+              <h1 className="fw-light">Contact Us</h1>
             </div>
           </div>
         </div>
       </div>
-      <div style={{height:'21rem'}}></div>
+      <div style={{height:'10rem'}}></div>
       <div id='contact_us'>
        <ToastContainer
         position="top-right"
