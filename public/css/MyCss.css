@@ -135,14 +135,29 @@ width: 100%;
   html:not(.no-js) [data-aos=fade-right],html:not(.no-js) [data-aos=fade-left] {
     transform: none !important;
   }
-  
+  header .intro-text {
+    padding: 160px 0px !important;;
+  }
+  .intro h1 {
+    font-size: 35px !important;
 }
 
-/* @media (max-width: 1024px) {
-  .service-bg {
-    height: 10vh !important;
-    }
-} */
+#features {
+  padding: 10px 0px !important;
+}
+
+#about {
+  padding: 10px 0px 20px 0px !important;
+}
+.MuiTypography-root{
+  padding: 0px !important;
+}
+.careerFormMainDiv {
+  margin-bottom: 0px !important;
+  height: auto !important;
+}
+}
+
 
 .testimonialCarousel {
   margin-top: 5%;
@@ -614,7 +629,7 @@ header .intro-text {
 }
 /* About Section */
 #about {
-  padding: 100px 0;
+  padding: 10px 0px 20px 0px;
 }
 #about h3 {
   font-size: 22px;

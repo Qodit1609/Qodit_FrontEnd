@@ -19,6 +19,7 @@ import MoreServices from "./components/Pages/MoreServices/MoreServices";
 import { SideBar } from "./components/Side_bar";
 import Loader from "react-loader-spinner";
 import NewFeature from "./components/Pages/Features/NewFeatures";
+import Hr from "./Admin/Hr";
 
 const App = () => {
   const [navBar , setNavBar] = useState(null);
@@ -49,6 +50,7 @@ const API = 'https://qoditdev.herokuapp.com';
           <Route path="/about" component={MoreAboutUs}/>
           <Route path="/services" component={MoreServices}/>
           <Route path="/features" component={NewFeature}/>
+          <Route path="/hr" component={Hr}/>
         </Switch>
         <FooterPage data={landingPageData.Contact} />
     </Router>
