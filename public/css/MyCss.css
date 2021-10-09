@@ -259,7 +259,7 @@ width: 100%;
 }
 
 .footerMainDiv {
-  padding: 40px 40px 0 40px;
+  padding: 60px 40px 0 40px;
 }
 
 /* Admin Edit page */
@@ -1104,4 +1104,50 @@ Foot text hover effect
 
 .MuiButtonGroup-root {
   margin-top: 4rem;
+}
+
+/* dashboard */
+
+#hr .sec-bg{
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 211;
+
+}
+
+#hr .sec-table{
+  padding-top: 100px;
+}
+
+#hr .table-dark{
+  background-color: black;
+}
+
+#hr tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+/* slaes */
+#sales .sec-bg{
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 211;
+
+}
+
+#sales .sec-table{
+  padding-top: 100px;
+}
+
+#sales .table-dark{
+  background-color: black;
+}
+
+#sales tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
 }
