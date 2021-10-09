@@ -2,6 +2,9 @@ import * as React from "react";
 import AdminMain from "./AdminMain";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
+import { selectUser } from "../app/UserAuth";
+import { Redirect, useHistory } from "react-router";
 
 const Dashboard = (params) => {
     const [showServices , setShowServices] = useState(null);
@@ -17,6 +20,8 @@ const Dashboard = (params) => {
     const [selectedMenuItemName, setselectedMenuItemName] = useState(null);
     const [currentDeleteListId, setCurrentDeleteListId] = useState(null);
     const API = 'https://qoditdev.herokuapp.com' ;
+    const user = useSelector(selectUser);
+    const history = useHistory();
 
 useEffect(()=>{
   async function getDataFromServer(){ 
@@ -35,8 +40,6 @@ useEffect(()=>{
     setAboutUs(AboutUs)
     setShowServices(showservicess)
     setTestimonials(testimonials)
-    // setTeam(team)
-    // setContactUs(contactus)
     setChooseus(chooseus)
   }
 getDataFromServer();
@@ -56,10 +59,8 @@ const deleteFunction = (selectedId) => {
   setselectedMenuItemId(selectedId)
   axios.delete(`${API}/${selectedMenuItemName}/${selectedId}`).then((res)=> console.log(res));}
 }
-// const deleteFilterFunc= () => {
-//   const userList = .filter((e) => e.email !== value);
-// setCurrentDeleteListId(userList);
-// }
+
+if(user){
     return(
         <AdminMain
         showServices={showServices}
@@ -74,7 +75,10 @@ const deleteFunction = (selectedId) => {
         setselectedMenuItemName={setselectedMenuItemName}
         setCurrentDeleteListId={setCurrentDeleteListId}
         />
-    )
+    )}
+    else {
+      <Redirect to='/admin'/>
+    }
 }
 export default Dashboard;
 

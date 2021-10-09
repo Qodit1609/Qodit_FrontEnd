@@ -16,6 +16,9 @@ import { createTheme,ThemeProvider } from '@material-ui/core';
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { login, logout } from '../app/UserAuth';
 
 function Copyright() { 
   return (
@@ -56,23 +59,60 @@ const theme = createTheme({
   },
 });
 
+const {location} = window
+
 export default function AdminSignIn() {
   const history = useHistory();
   const classes = useStyles();
-
-  const [userName, setUserName] = useState(null)
+  const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
+  const [message, setMessage] = useState(null)
+  const [data, setData] = useState({})
+  const API = 'https://qoditdev.herokuapp.com';
+  const dispatch = useDispatch();
 
-  const LogInHandle = (event) => {
+  const LogInHandle = async (event) => {
     event.preventDefault();
-  if(!userName.toString().trim().length)return console.log('enter email');
-  if(!password) return console.log('enter password');
-
-  let path = `/admin/dashboard`; 
-  if(userName === 'admin@qodit.io' && password==='admin@qodit.io' ){
-  history.push(path);
+    if(!email.toString().trim().length)return console.log('enter email');
+    if(!password) return console.log('enter password');
+    
+    let loginApi = await axios.post(`${API}/api/auth/login`, {email,password})
+    .then(({data}) =>{ 
+      console.log(data)
+      setMessage(data.message)
+      setData(data.data)
+      roleBaseAccess(data.data);
+    })
   }
-}
+  
+  function roleBaseAccess(data){
+    let pathAdmin = `/admin/dashboard`; 
+    let pathHR = `/hr/dashboard`; 
+    let pathSales = `/sales/dashboard`; 
+    console.log(data)
+    if(data){
+    switch(data.roleName){
+      case 'admin' :
+        history.push(pathAdmin)
+        break;
+        case 'hr' :
+          history.push(pathHR)
+          break;
+          case 'sales' :
+            history.push(pathSales)
+            break;
+      default :
+          console.log('err')
+    }
+    dispatch(login({
+      roleName:data.roleName,
+      loggedIn:true,
+      data:data,
+    }))
+  }
+  location.reload();
+  }
+
   return (
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
@@ -95,7 +135,7 @@ export default function AdminSignIn() {
             name="email"
             autoComplete="email"
             autoFocus
-            onChange={e => setUserName(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             />
           <TextField
             variant="outlined"

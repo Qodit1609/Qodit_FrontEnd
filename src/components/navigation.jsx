@@ -3,7 +3,25 @@ import { Link, NavLink, withRouter } from "react-router-dom"
 export const Navigation = withRouter((props) => {
   const {navBar} = props;
   const { location } = props;
-  if (location.pathname.match(/admin/)){
+
+  function checkRouter(){
+    if(location){
+      switch (location.pathname){
+        case '/admin':
+          return true
+        case '/admin/dashboard':
+          return true;
+        case '/hr/dashboard':
+          return true;
+        case '/sales/dashboard':
+          return true;
+        default :
+          return false;
+      }
+    }
+  }
+
+  if (checkRouter()){
     return null;
   } 
   return (

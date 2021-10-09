@@ -7,7 +7,7 @@ import {
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { MainBody } from "./MainBody";
 import { CareerForm } from "./components/Pages/CareerForm/CareerForm";
-import AdminSignIn from "./Admin/AdminSignIn";
+import AdminSignIn from "./Admin/SignIn";
 import Dashboard from "./Admin/dashboard";
 import { ContactUs } from "./components/Pages/ContactUs/ContactUs";
 import { Navigation } from "./components/navigation";
@@ -19,7 +19,8 @@ import MoreServices from "./components/Pages/MoreServices/MoreServices";
 import { SideBar } from "./components/Side_bar";
 import Loader from "react-loader-spinner";
 import NewFeature from "./components/Pages/Features/NewFeatures";
-import Hr from "./Admin/Hr";
+import { HrDashboard } from "./Admin/hr/HR_Dashboard";
+import { SalesDashboard } from "./Admin/sales/SalesDashboard";
 
 const App = () => {
   const [navBar , setNavBar] = useState(null);
@@ -45,12 +46,13 @@ const API = 'https://qoditdev.herokuapp.com';
           <Route exact path="/" component={MainBody} />   
           <Route path="/career" component={CareerForm}/>
           <Route exact path="/admin" component={AdminSignIn}/>
-          <Route path="/admin/dashboard" component={Dashboard}/>
           <Route path="/contact_us" component={ContactUs}/>
           <Route path="/about" component={MoreAboutUs}/>
           <Route path="/services" component={MoreServices}/>
           <Route path="/features" component={NewFeature}/>
-          <Route path="/hr" component={Hr}/>
+          <Route path="/admin/dashboard" component={Dashboard}/>
+          <Route path="/hr/dashboard" component={HrDashboard}/>
+          <Route path="/sales/dashboard" component={SalesDashboard}/>
         </Switch>
         <FooterPage data={landingPageData.Contact} />
     </Router>

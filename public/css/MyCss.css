@@ -232,9 +232,11 @@ width: 100%;
   /* z-index: 3; */
   margin-top: -15%;
 }
-
-#standard-basic {
-  width: 100%;
+.careerFormMainDiv{
+    font-size: 1.5rem;
+    height: 100vh;
+    width: 100%;
+    background:url(/img/CareerFormImg.jpg) center center no-repeat;
 }
 .careerFormMainDiv {
   font-size: 1.5rem;

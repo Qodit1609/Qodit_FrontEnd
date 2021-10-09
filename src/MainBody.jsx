@@ -22,19 +22,13 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
   })  
 
   export const MainBody = (props) => {
-  // const [landingPageData, setLandingPageData] = useState({})
   const [showServices , setShowServices] = useState(null);
-  // const [navBar , setNavBar] = useState(null);
   const [heroBox , setheroBox] = useState(null);
   const [dataFeatures , setDataFeatures] = useState(null);
   const [aboutUs , setAboutUs] = useState(null);
   const [testimonials , setTestimonials] = useState(null);
   const [team , setTeam] = useState(null);
   const [chooseus , setChooseus] = useState(null);
-
-  // useEffect(() => {
-  //   setLandingPageData(JsonData)
-  // }, [])
 
 const API = 'https://qoditdev.herokuapp.com';
   useEffect(()=>{
