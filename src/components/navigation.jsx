@@ -42,7 +42,6 @@ export const Navigation = withRouter((props) => {
           <Link  className='navbar-brand page-scroll' to='/'>
           Qodit
           </Link>
-          {' '}
         </div>
 
         <div
@@ -51,16 +50,16 @@ export const Navigation = withRouter((props) => {
         > 
           <ul className='nav navbar-nav navbar-right'>
             {navBar && navBar.map( data => {
-            return (<li>
+            return (<li className="nav-item">
               <NavLink exact activeClassName="active" to={`${data.body}`} className='page-scroll'>
                 {data.title}
               </NavLink>
             </li>)}) }
             <li> 
-              <Link to="/career" style={{ textDecoration: 'none' }}
+              <NavLink exact activeClassName="active"  to="/career" style={{ textDecoration: 'none' }}
               className='page-scroll'>
                 Careers
-              </Link>
+              </NavLink>
             </li>
                   </ul>
         </div>
