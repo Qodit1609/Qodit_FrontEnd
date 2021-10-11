@@ -47,7 +47,7 @@ export const ContactUs = () => {
           </div>
         </div>
       </div>
-      <div style={{height:'10rem'}}></div>
+      <div className="contact-sec"></div>
       <div id='contact_us'>
        <ToastContainer
         position="top-right"

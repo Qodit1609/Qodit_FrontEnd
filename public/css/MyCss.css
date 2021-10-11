@@ -47,8 +47,6 @@
   width: 100%;
 }
 
-
-
 .service-bg {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -64,11 +62,11 @@
   padding-top: 70px;
 }
 
-.carer-button input{
+.carer-button input {
   padding-bottom: 20px;
-} 
+}
 
-.carer-button button{
+.carer-button button {
   border-radius: 2px;
   border: 1px solid rgb(162, 159, 159);
   padding: 5px 20px;
@@ -76,16 +74,15 @@
   color: #000;
 }
 
-.MuiButton-label input{
+.MuiButton-label input {
   margin-left: 6px;
 }
-.MuiContainer-root button{
-width: 100%;
+.MuiContainer-root button {
+  width: 100%;
 }
 .MuiButton-contained {
   margin-bottom: 15px !important;
 }
-
 
 @media (max-width: 768px) {
   .testimonialsCenter {
@@ -111,16 +108,16 @@ width: 100%;
     margin-top: 0% !important;
   }
   .fw-light {
-	padding-top: 8px !important;
+    padding-top: 8px !important;
   }
   .service-bg {
-	height: 20vh !important;
+    height: 20vh !important;
   }
   /* .background-svg {
     height: auto !important;  
     width: 100% !important;
   } */
-  .background-svg svg{
+  .background-svg svg {
     height: auto !important;
     width: 100% !important;
   }
@@ -128,36 +125,39 @@ width: 100%;
     pointer-events: auto !important;
   }
 
-  html:not(.no-js) [data-aos^=fade][data-aos^=fade] {
+  html:not(.no-js) [data-aos^="fade"][data-aos^="fade"] {
     opacity: 1 !important;
   }
 
-  html:not(.no-js) [data-aos=fade-right],html:not(.no-js) [data-aos=fade-left] {
+  html:not(.no-js) [data-aos="fade-right"],
+  html:not(.no-js) [data-aos="fade-left"] {
     transform: none !important;
   }
   header .intro-text {
-    padding: 160px 0px !important;;
+    padding: 160px 0px !important;
   }
   .intro h1 {
     font-size: 35px !important;
-}
+  }
 
-#features {
-  padding: 10px 0px !important;
-}
+  #features {
+    padding: 10px 0px !important;
+  }
 
-#about {
-  padding: 10px 0px 20px 0px !important;
+  #about {
+    padding: 10px 0px 20px 0px !important;
+  }
+  .MuiTypography-root {
+    padding: 0px !important;
+  }
+  .careerFormMainDiv {
+    margin-bottom: 0px !important;
+    height: auto !important;
+  }
+  .contact-sec {
+    height: 0rem !important;
+  }
 }
-.MuiTypography-root{
-  padding: 0px !important;
-}
-.careerFormMainDiv {
-  margin-bottom: 0px !important;
-  height: auto !important;
-}
-}
-
 
 .testimonialCarousel {
   margin-top: 5%;
@@ -232,11 +232,11 @@ width: 100%;
   /* z-index: 3; */
   margin-top: -15%;
 }
-.careerFormMainDiv{
-    font-size: 1.5rem;
-    height: 100vh;
-    width: 100%;
-    background:url(/img/CareerFormImg.jpg) center center no-repeat;
+.careerFormMainDiv {
+  font-size: 1.5rem;
+  height: 100vh;
+  width: 100%;
+  background: url(/img/CareerFormImg.jpg) center center no-repeat;
 }
 .careerFormMainDiv {
   font-size: 1.5rem;
@@ -849,6 +849,9 @@ header .intro-text {
   color: #888;
 }
 /* Contact Section */
+.contact-sec {
+  height: 6rem;
+}
 #contact_us {
   padding: 100px 0 60px 0;
   background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
@@ -1108,46 +1111,44 @@ Foot text hover effect
 
 /* dashboard */
 
-#hr .sec-bg{
+#hr .sec-bg {
   overflow: hidden;
   background-color: #333;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
   z-index: 211;
-
 }
 
-#hr .sec-table{
+#hr .sec-table {
   padding-top: 100px;
 }
 
-#hr .table-dark{
+#hr .table-dark {
   background-color: black;
 }
 
 #hr tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 /* slaes */
-#sales .sec-bg{
+#sales .sec-bg {
   overflow: hidden;
   background-color: #333;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%;
   z-index: 211;
-
 }
 
-#sales .sec-table{
+#sales .sec-table {
   padding-top: 100px;
 }
 
-#sales .table-dark{
+#sales .table-dark {
   background-color: black;
 }
 
 #sales tbody tr:nth-of-type(odd) {
-  background-color: rgba(0,0,0,.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }

@@ -21,6 +21,8 @@ import Loader from "react-loader-spinner";
 import NewFeature from "./components/Pages/Features/NewFeatures";
 import Hr_Dashboard from "./Admin/hr/HR_Dashboard";
 import SalesDashboard from "./Admin/sales/SalesDashboard";
+import Policy from "./components/Pages/Policy/Policy";
+import Terms from "./components/Pages/Terms/Terms";
 
 const App = () => {
   const [navBar , setNavBar] = useState(null);
@@ -53,6 +55,8 @@ const API = 'https://qoditdev.herokuapp.com';
           <Route path="/admin/dashboard" component={Dashboard}/>
           <Route path="/hr/dashboard" component={Hr_Dashboard}/>
           <Route path="/sales/dashboard" component={SalesDashboard} />
+          <Route path ="/policy" component={Policy}/>
+          <Route path ="/term" component={Terms}/>
         </Switch>
         <FooterPage data={landingPageData.Contact} />
     </Router>
