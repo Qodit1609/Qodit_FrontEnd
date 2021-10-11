@@ -19,8 +19,8 @@ import MoreServices from "./components/Pages/MoreServices/MoreServices";
 import { SideBar } from "./components/Side_bar";
 import Loader from "react-loader-spinner";
 import NewFeature from "./components/Pages/Features/NewFeatures";
-import { HrDashboard } from "./Admin/hr/HR_Dashboard";
-import { SalesDashboard } from "./Admin/sales/SalesDashboard";
+import Hr_Dashboard from "./Admin/hr/HR_Dashboard";
+import SalesDashboard from "./Admin/sales/SalesDashboard";
 
 const App = () => {
   const [navBar , setNavBar] = useState(null);
@@ -51,8 +51,8 @@ const API = 'https://qoditdev.herokuapp.com';
           <Route path="/services" component={MoreServices}/>
           <Route path="/features" component={NewFeature}/>
           <Route path="/admin/dashboard" component={Dashboard}/>
-          <Route path="/hr/dashboard" component={HrDashboard}/>
-          <Route path="/sales/dashboard" component={SalesDashboard}/>
+          <Route path="/hr/dashboard" component={Hr_Dashboard}/>
+          <Route path="/sales/dashboard" component={SalesDashboard} />
         </Switch>
         <FooterPage data={landingPageData.Contact} />
     </Router>

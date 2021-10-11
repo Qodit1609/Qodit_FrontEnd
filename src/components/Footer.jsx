@@ -1,7 +1,9 @@
 import React from "react";
+import { withRouter } from "react-router";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
-const FooterPage = (props) => {
+const FooterPage = withRouter((props) => {
+  const { location } = props;
   const style = {
     li: {
       color: "#37474F",
@@ -14,6 +16,27 @@ const FooterPage = (props) => {
       fontSize: "1.5rem",
     },
   };
+  
+  function checkRouter(){
+    if(location){
+      switch (location.pathname){
+        case '/admin':
+          return true
+        case '/admin/dashboard':
+          return true;
+        case '/hr/dashboard':
+          return true;
+        case '/sales/dashboard':
+          return true;
+        default :
+          return false;
+      }
+    }
+  }
+
+  if (checkRouter()){
+    return null;
+  } 
   return (
     <div>
       <div style={{ position: "absolute", width: "100%" }}>
@@ -176,6 +199,6 @@ const FooterPage = (props) => {
       </MDBFooter>
     </div>
   );
-};
+})
 
 export default FooterPage;
