@@ -7,7 +7,7 @@ export const Navigation = withRouter((props) => {
   function checkRouter(){
     if(location){
       switch (location.pathname){
-        case '/admin':
+        case '/login':
           return true
         case '/admin/dashboard':
           return true;

@@ -7,12 +7,33 @@ import {
   faYoutube,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { withRouter } from "react-router";
 
-export const SideBar = ({ location }) => {
+
+export const SideBar = withRouter(({ location }) => {
   // if (location.pathname.match(/admin/)) {
   //   return null;
   // }
-  return (
+  function checkRouter(){
+    if(location){
+      switch (location.pathname){
+        case '/login':
+          return true
+        case '/admin/dashboard':
+          return true;
+        case '/hr/dashboard':
+          return true;
+        case '/sales/dashboard':
+          return true;
+        default :
+          return false;
+      }
+    }
+  }
+
+  if (checkRouter()){
+    return null;
+  } return (
     <div className="icon-bar">
       <a
         href="https://www.facebook.com/Qodit-solution-106661398372713"
@@ -40,4 +61,5 @@ export const SideBar = ({ location }) => {
       </a>
     </div>
   );
-};
+}
+)

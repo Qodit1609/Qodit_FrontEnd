@@ -47,7 +47,7 @@ const API = 'https://qoditdev.herokuapp.com';
         <Switch>
           <Route exact path="/" component={MainBody} />   
           <Route path="/career" component={CareerForm}/>
-          <Route exact path="/admin" component={AdminSignIn}/>
+          <Route exact path="/login" component={AdminSignIn}/>
           <Route path="/contact_us" component={ContactUs}/>
           <Route path="/about" component={MoreAboutUs}/>
           <Route path="/services" component={MoreServices}/>

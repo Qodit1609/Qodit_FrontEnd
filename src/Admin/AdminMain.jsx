@@ -17,10 +17,19 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AdminShowData from './AdminShowData';
 import { Button } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
+import AddIcon from '@material-ui/icons/Add'; 
 import CreateDataPopForm from './createDataPopForm';
 import FolderIcon from '@material-ui/icons/Folder';
 import EditDataPopForm from './EditDataPopup';
+import Badge from '@material-ui/core/Badge';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import { useHistory } from "react-router-dom";
+
+
+
 
 const drawerWidth = 240;
 
@@ -80,14 +89,42 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  grow: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    display: 'none',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+    },
+  },
+  
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
 }));
 
+const {location} = window
+
 export default function AdminMain({showServices,navBar,heroBox,dataFeatures,aboutUs,testimonials,chooseus, addNewData,deleteFunction,setselectedMenuItemName,editDataForPopUp,setCurrentDeleteListId }) {
   const classes = useStyles();
+  const history = useHistory();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [adminShowDataProps, setAdminShowDataProps] = React.useState([]);
@@ -132,6 +169,46 @@ export default function AdminMain({showServices,navBar,heroBox,dataFeatures,abou
     setOpenPopupEdit(false);
   };
 
+
+
+  // const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const isMenuOpen = Boolean(anchorEl);
+
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMenuClose = () => {
+    history.push("/login");
+    location.reload();
+  };
+
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+    </Menu>
+  );
+
+
+
   return (
     <>
     <div className={classes.root}>
@@ -157,8 +234,23 @@ export default function AdminMain({showServices,navBar,heroBox,dataFeatures,abou
           <Typography variant="h6" noWrap>
          Qodit Admin Panel
           </Typography>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <IconButton
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+        
         </Toolbar>
       </AppBar>
+      {renderMenu}
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
@@ -199,7 +291,7 @@ export default function AdminMain({showServices,navBar,heroBox,dataFeatures,abou
     <div style={{position:'absolute',right:'25px'}}>
       <label htmlFor="contained-button-file " className='addNewbtnClass'>
         <Button variant="contained" onClick={()=>handleClickOpen()} color="grey" component="span">
-         <AddIcon/> {" "} Add New
+         <AddIcon/>  Add New
         </Button>
       </label>
       </div>
