@@ -1,14 +1,17 @@
-import React, {useEffect} from "react";
-import AllTime from "./img/all-time.png";
-import Research from "./img/resarch-development.png";
-import Team from "./img/team.png";
-import Technology from "./img/technology.png";
+import React, { useState, useEffect } from "react";
 import { BackgroundSVG } from "../BackgroundSVG";
+import axios from "axios";
 
-const NewFeature = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
+export const NewFeature = (props) => {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    axios.get("https://qoditdev.herokuapp.com/featuresChild").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
+  console.log("data", data);
+
   return (
     <div id="service">
       <BackgroundSVG />
@@ -24,128 +27,60 @@ const NewFeature = () => {
           </div>
         </div>
       </div>
-      <section className="sec-service">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
+      {data &&
+        data.map((data, index) => (
+          index % 2 == 0 ? (
+            <section className="sec-service">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6">
               <div className="web-content">
-                <h2>Availability all the Time</h2>
-                <p>
-                  Qodit furnishes a complete answer for you with inventive
-                  methodology and high trustworthiness,We let you stay ahead in
-                  this computerized promoting world through changed
-                  administrations forthcoming on the lookout and which are as of
-                  now settled too. With an extraordinary energy for what we work
-                  on, we permit fervor to remain with us to produce powerful
-                  answers for our clients.
-                </p>
+                <h2>{data.title}</h2>
+                <p>{data.description}</p>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className="web-image">
-                <img
-                  data-aos="fade-left
-                     "
-                  data-aos-duration="1500"
-                  src={AllTime}
-                  alt=""
-                />
-              </div>
+          </div>
+          <div className="col-md-6">
+            <div className="web-image">
+              <img
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-duration="1500"
+                src={data.image}
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </section>
-      <section className="sec-service web-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="service-image">
-                <img
-                  data-aos="fade-right
-                     "
-                  data-aos-duration="1500"
-                  data-aos-duration="1500"
-                  src={Technology}
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="web-service">
-                <h2>Diverse Technology</h2>
-                <p>
-                  Our team helps you to increase control over your small
-                  business with software designed to grow with you. Streamline
-                  all processes, gain greater insight into your business, and
-                  make decisions based on real-time information to drive
-                  profitable growth.We have faith in making long haul
-                  relationships with our customers making a superior association
-                  each time we connect.
-                </p>
-              </div>
+      </div>
+    </section>
+  ) : (
+    <section className="sec-service web-bg">
+      <div className="container">
+        <div className="row">
+        <div className="col-md-6">
+            <div className="service-image">
+              <img
+                data-aos="fade-left "
+                data-aos-duration="1500"
+                data-aos-duration="1500"
+                src={data.image}
+                alt=""
+              />
             </div>
           </div>
-        </div>
-      </section>
-      <section className="sec-service">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="web-content">
-                <h2>Research and development</h2>
-                <p>
-                  We employ best practice processes and development
-                  methodologies as a foundation for rapid building of
-                  cutting-edge technology solutions in a structured and
-                  methodical way.We keep elevated expectations to contend in the
-                  high speed worldwide market and give refined programming
-                  answers for our customers.
-                </p>
+          <div className="col-md-6">
+            <div className="web-service">
+                <h2>{data.title}</h2>
+                <p>{data.description}</p>
               </div>
-            </div>
-            <div className="col-md-6">
-              <div className="web-image">
-                <img
-                  data-aos="fade-right
-                     "
-                  data-aos-duration="1500"
-                  src={Research}
-                  alt=""
-                />
-              </div>
-            </div>
           </div>
+        
         </div>
-      </section>
-      <section className="sec-service web-bg">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="service-image">
-                <img
-                  data-aos="fade-left
-                     "
-                  data-aos-duration="1500"
-                  src={Team}
-                  alt=""
-                />
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="web-service">
-                <h2>Experienced Team</h2>
-                <p>
-                  We have been giving multidimensional IT organizations to our
-                  clients including electronic exhibiting and online webpage
-                  arranging solutions.we Offer monetarily wise and quick
-                  solutions for our clients, we work with a right attitude and
-                  thusly execute fittingly. It's not by and large you, it's us.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
+          )
+        ))}
+      
     </div>
   );
 };
