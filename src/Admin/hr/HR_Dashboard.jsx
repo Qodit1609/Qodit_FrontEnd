@@ -129,8 +129,6 @@ export default function HR_Dashboard() {
     location.reload();
   };
 
-
-
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu

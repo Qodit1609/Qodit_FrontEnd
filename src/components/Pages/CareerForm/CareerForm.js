@@ -103,7 +103,7 @@ export const CareerForm = (props) => {
           <ThemeProvider theme={theme}>
             <Typography component="div" style={style.form}>
               {/* <h1 className="careerHeading"> APPLY NOW</h1> */}
-              <form style={{ textAlign: "justify", margin: "54px" }}>
+              <form style={{ textAlign: "justify", margin: "100px 54px 54px 80px " }}>
                 <div>
                   <FormControl fullWidth className={classes.margin}>
                     <InputLabel htmlFor="standard-basic">Your Name</InputLabel>

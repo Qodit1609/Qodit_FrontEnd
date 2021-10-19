@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 import WhoWe from "../../../Assets/images/about.png";
 import Mission from "../../../Assets/images/mission.png";
 import Vision from "../../../Assets/images/vision.png";
@@ -195,8 +196,16 @@ const NewAboutUs = () => {
                   alt="Vision"
                   className="img-fluid"
                 />
-                <h3 style={style.h3}>Our Vision</h3>
-                <p>{Our_Vision}</p>
+                <h3>Our Vision</h3>
+                <ReactReadMoreReadLess
+                    charLimit={93}
+                    readMoreText={"Read more "}
+                    readLessText={"Read less "}
+                    readMoreClassName="read-more-less--more"
+                    readLessClassName="read-more-less--less"
+                  >
+                    {Our_Vision}
+                  </ReactReadMoreReadLess>
               </div>
             </div>
             <div className="col-md-4">
@@ -208,8 +217,16 @@ const NewAboutUs = () => {
                   alt="Mission"
                   className="img-fluid"
                 />
-                <h3 style={style.h3}>Our Mission</h3>
-                <p>{Our_Mission}</p>
+                <h3>Our Mission</h3>
+                <p> <ReactReadMoreReadLess
+                    charLimit={70}
+                    readMoreText={"Read more "}
+                    readLessText={"Read less "}
+                    readMoreClassName="read-more-less--more"
+                    readLessClassName="read-more-less--less"
+                  >
+                    {Our_Mission}
+                  </ReactReadMoreReadLess></p>
               </div>
             </div>
             <div className="col-md-4">
@@ -221,8 +238,18 @@ const NewAboutUs = () => {
                   alt="Value"
                   className="img-fluid"
                 />
-                <h3 style={style.h3}>Values</h3>
-                <p>{Values3}</p>
+                <h3>Values</h3>
+                <p>
+                  <ReactReadMoreReadLess
+                    charLimit={70}
+                    readMoreText={"Read more "}
+                    readLessText={"Read less "}
+                    readMoreClassName="read-more-less--more"
+                    readLessClassName="read-more-less--less"
+                  >
+                    {Values3}
+                  </ReactReadMoreReadLess>
+                </p>
               </div>
             </div>
           </div>

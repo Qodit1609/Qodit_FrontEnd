@@ -17,11 +17,12 @@ import { Navbar } from 'react-bootstrap'
 import Loader from "react-loader-spinner";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 1000,
-    speedAsDuration: true,
-  })  
+  speed: 100,
+  speedAsDuration: true,
+})  
 
   export const MainBody = (props) => {
+    
   const [showServices , setShowServices] = useState(null);
   const [heroBox , setheroBox] = useState(null);
   const [dataFeatures , setDataFeatures] = useState(null);
@@ -30,6 +31,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
   const [team , setTeam] = useState(null);
   const [chooseus , setChooseus] = useState(null);
 
+ 
 const API = 'https://qoditdev.herokuapp.com';
   useEffect(()=>{
     async function getDataFromServer(){ 
@@ -50,10 +52,12 @@ const API = 'https://qoditdev.herokuapp.com';
       // setTeam(team)
       setChooseus(chooseus)
     }
+   
     getDataFromServer();
     window.scrollTo(0, 0)
   },[])
   return (
+    ( heroBox ?
     <div>
       {heroBox && <Header heroBox={heroBox} />}
       {dataFeatures && <Features dataFeatures={dataFeatures}/>}
@@ -63,5 +67,15 @@ const API = 'https://qoditdev.herokuapp.com';
       {testimonials && <Testimonials data={testimonials} />}
       {/* <Contact data={landingPageData.Contact}/> */}
     </div>
+    :
+    <div className="loadingClass"> 
+    <Loader
+      type="BallTriangle"
+      color="white"
+      height={80}
+      width={80}
+    />
+    </div>
+    )
   )
 }

@@ -70,7 +70,7 @@ export const ContactUs = () => {
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name='sentMessage' action="mailto:kapil.info18@gmail.com" validate onSubmit={handleSubmit}>
+              <form name='sentMessage' validate onSubmit={handleSubmit}>
                 <div className='row'>
                   <div className='col-md-6'>
                     <div className='form-group'>

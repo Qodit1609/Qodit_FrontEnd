@@ -445,7 +445,7 @@ hr {
 }
 #bs-example-navbar-collapse-1 .active{
 
-  border-bottom: 2px solid #ddff63;
+  border-bottom: 2px solid #919191 ;
   bottom: -1px;
 }
 /* #menu.navbar-default .navbar-nav > li > a:after {
@@ -533,7 +533,6 @@ hr {
 .btn-custom.active {
   color: rgb(255, 255, 255);
   background-image: none;
-  /* background: linear-gradient(to right, #ddff63 0%, #fba45c 100%); */
 }
 .btn:active,
 .btn.active {
