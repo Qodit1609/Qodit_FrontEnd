@@ -28,59 +28,57 @@ export const NewFeature = (props) => {
         </div>
       </div>
       {data &&
-        data.map((data, index) => (
+        data.map((data, index) =>
           index % 2 == 0 ? (
             <section className="sec-service">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-              <div className="web-content">
-                <h2>{data.title}</h2>
-                <p>{data.description}</p>
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="web-content">
+                      <h2>{data.title}</h2>
+                      <p>{data.description}</p>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="web-image">
+                      <img
+                        data-aos="fade-left"
+                        data-aos-duration="1500"
+                        data-aos-duration="1500"
+                        src={data.image}
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-          </div>
-          <div className="col-md-6">
-            <div className="web-image">
-              <img
-                data-aos="fade-left"
-                data-aos-duration="1500"
-                data-aos-duration="1500"
-                src={data.image}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  ) : (
-    <section className="sec-service web-bg">
-      <div className="container">
-        <div className="row">
-        <div className="col-md-6">
-            <div className="service-image">
-              <img
-                data-aos="fade-left "
-                data-aos-duration="1500"
-                data-aos-duration="1500"
-                src={data.image}
-                alt=""
-              />
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="web-service">
-                <h2>{data.title}</h2>
-                <p>{data.description}</p>
+            </section>
+          ) : (
+            <section className="sec-service web-bg">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-6">
+                    <div className="service-image">
+                      <img
+                        data-aos="fade-left "
+                        data-aos-duration="1500"
+                        data-aos-duration="1500"
+                        src={data.image}
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="web-service">
+                      <h2>{data.title}</h2>
+                      <p>{data.description}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-          </div>
-        
-        </div>
-      </div>
-    </section>
+            </section>
           )
-        ))}
-      
+        )}
     </div>
   );
 };

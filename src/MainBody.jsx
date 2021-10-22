@@ -59,6 +59,8 @@ const API = 'https://qoditdev.herokuapp.com';
   return (
     ( heroBox ?
     <div>
+            {process.env.REACT_APP_BASE_URL}
+
       {heroBox && <Header heroBox={heroBox} />}
       {dataFeatures && <Features dataFeatures={dataFeatures}/>}
       {aboutUs && <About chooseus={chooseus} aboutUs={aboutUs} />}
