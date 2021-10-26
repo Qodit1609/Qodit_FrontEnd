@@ -1,3 +1,107 @@
+// import React from "react";
+// import { Formik } from "formik";
+// import * as EmailValidator from "email-validator";
+// import * as Yup from "yup";
+// const SignIn = () => (
+//     <div id="login">
+//               <div class="card">
+
+//   <Formik
+//     initialValues={{ email: "", password: "" }}
+//     onSubmit={(values, { setSubmitting }) => {
+//       setTimeout(() => {
+//         console.log("Logging in", values);
+//         setSubmitting(false);
+//       }, 500);
+//     }}
+//     //********Handling validation messages yourself*******/
+//     // validate={values => {
+//     //   let errors = {};
+//     //   if (!values.email) {
+//     //     errors.email = "Required";
+//     //   } else if (!EmailValidator.validate(values.email)) {
+//     //     errors.email = "Invalid email address";
+//     //   }
+
+//     //   const passwordRegex = /(?=.*[0-9])/;
+//     //   if (!values.password) {
+//     //     errors.password = "Required";
+//     //   } else if (values.password.length < 8) {
+//     //     errors.password = "Password must be 8 characters long.";
+//     //   } else if (!passwordRegex.test(values.password)) {
+//     //     errors.password = "Invalida password. Must contain one number";
+//     //   }
+
+//     //   return errors;
+//     // }}
+//     //********Using Yum for validation********/
+
+//     validationSchema={Yup.object().shape({
+//       email: Yup.string()
+//         .email()
+//         .required("Required"),
+//       password: Yup.string()
+//         .required("No password provided.")
+//         .min(8, "Password is too short - should be 8 chars minimum.")
+//         .matches(/(?=.*[0-9])/, "Password must contain a number.")
+//     })}
+//   >
+//     {props => {
+//       const {
+//         values,
+//         touched,
+//         errors,
+//         isSubmitting,
+//         handleChange,
+//         handleBlur,
+//         handleSubmit
+//       } = props;
+//       return (
+//         <form onSubmit={handleSubmit}>
+//                       <h2 class="title"> Log in</h2>
+
+//                       <div class="email-login">
+//           <label htmlFor="email"><b> Email</b></label>
+//           <input
+//             name="email"
+//             type="text"
+//             placeholder="Enter your email"
+//             value={values.email}
+//             onChange={handleChange}
+//             onBlur={handleBlur}
+//             className={errors.email && touched.email && "error"}
+//           />
+//           {errors.email && touched.email && (
+//             <div className="input-feedback">{errors.email}</div>
+//           )}
+//           <label htmlFor="email"> <b> Password </b></label>
+//           <input
+//             name="password"
+//             type="password"
+//             placeholder="Enter your password"
+//             value={values.password}
+//             onChange={handleChange}
+//             onBlur={handleBlur}
+//             className={errors.password && touched.password && "error"}
+//           />
+//           {errors.password && touched.password && (
+//             <div className="input-feedback">{errors.password}</div>
+//           )}
+//           <button class="cta-btn" type="submit" disabled={isSubmitting}>
+//             Login
+//           </button>
+//           </div>
+//         </form>
+//       );
+//     }}
+//   </Formik>
+//   </div>
+//   </div>
+// );
+
+
+
+
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
@@ -71,33 +175,8 @@ export default function AdminSignIn() {
   const API = "https://qoditdev.herokuapp.com";
   const dispatch = useDispatch();
   const [error, setError] = useState(null);
-  const [emailError] = useState(null);
-  const [passwordError] = useState(null);
-
-
-  // function validate(obj) {
-  //   emailError = "";
-  //   passwordError = "";
-  //   console.log(obj);
-  //   if (!obj.email.toString().trim().length) {
-  //     const emailError = "Enter email or invalid";
-  //   }
-  //   if (!obj.password.toString().trim().length) {
-  //     const passwordError = "Enter email or invalid";
-  //   }
-
-  //   if(emailError || passwordError){
-  //     console.log(emailError, passwordError);
-  //     return false;
-  //   }
-  //   return true;
-  // }
 
   const LogInHandle = async (event) => {
-    // if (validate({ email, password })) {
-    //   // hit login api
-    // }
-
     event.preventDefault();
     if (!email.toString().trim().length) return console.log("enter email");
     if (!password) return console.log("enter password");
@@ -110,12 +189,13 @@ export default function AdminSignIn() {
         setData(data.data);
         setError(false);
         roleBaseAccess(data.data);
-      })
-      .catch(function (error) {
-        setError(true);
-        console.log("invalid username or password");
-        return Promise.reject(error);
-      });
+      }).catch(
+        function (error) {
+          setError(true);
+          console.log('invalid username or password')
+          return Promise.reject(error)
+        }
+      )
   };
 
   function roleBaseAccess(data) {
@@ -161,7 +241,7 @@ export default function AdminSignIn() {
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
-              error={error ? true : false}
+               error={error ? true : false}
               variant="outlined"
               margin="normal"
               required
@@ -171,15 +251,14 @@ export default function AdminSignIn() {
               name="email"
               autoComplete="email"
               autoFocus
-              onFocus= {(e) => setError(false)}
               onChange={(e) => setEmail(e.target.value)}
               helperText={error ? "Incorrect email." : null}
               required
             />
-
+           
             <TextField
-              error={error ? true : false}
-              variant="outlined"
+               error={error ? true : false}
+               variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -188,10 +267,9 @@ export default function AdminSignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
-              onFocus= {(e) => setError(false)}
               onChange={(e) => setPassword(e.target.value)}
               helperText={error ? "Incorrect password." : null}
-              required
+             required
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -211,12 +289,12 @@ export default function AdminSignIn() {
             </Link>
             <Grid container>
               <Grid item xs>
-                <Link to="/forgot" variant="body2">
+                <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <Link to="#" variant="body2">
+                <Link href="#" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
@@ -230,3 +308,6 @@ export default function AdminSignIn() {
     </ThemeProvider>
   );
 }
+
+
+// export default SignIn;

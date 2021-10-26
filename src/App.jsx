@@ -19,6 +19,9 @@ import Hr_Dashboard from "./Admin/hr/HR_Dashboard";
 import SalesDashboard from "./Admin/sales/SalesDashboard";
 import Policy from "./components/Pages/Policy/Policy";
 import Terms from "./components/Pages/Terms/Terms";
+import Forgot from "./Admin/Forgot";
+import Reset from "./Admin/Reset";
+import Otp from "./Admin/Otp";
 
 const App = () => {
   const [navBar, setNavBar] = useState(null);
@@ -37,14 +40,14 @@ const App = () => {
   }, []);
   return (
     <div>
-      ( navBar ?
+      { navBar ?
       <Router>
         {navBar && <Navigation navBar={navBar} />}
         <SideBar />
         <Switch>
           <Route exact path="/" component={MainBody} />
           <Route path="/career" component={CareerForm} />
-          <Route exact path="/login" component={AdminSignIn} />
+          <Route exact path="/login"  component={AdminSignIn} />
           <Route path="/contact_us" component={ContactUs} />
           <Route path="/about" component={MoreAboutUs} />
           <Route path="/services" component={MoreServices} />
@@ -54,14 +57,19 @@ const App = () => {
           <Route path="/sales/dashboard" component={SalesDashboard} />
           <Route path="/policy" component={Policy} />
           <Route path="/term" component={Terms} />
+          <Route path="/forgot" component={Forgot} />
+          <Route path="/reset" component={Reset} />
+          <Route path="/otp" component={Otp} />
+
+
         </Switch>
         <FooterPage data={landingPageData.Contact} />
       </Router>
       :
-      {/* <div className="loadingClass">
+       <div className="loadingClass">
         <Loader type="BallTriangle" color="white" height={80} width={80} />
-      </div> */}
-      )
+      </div> 
+}
     </div>
   );
 };
