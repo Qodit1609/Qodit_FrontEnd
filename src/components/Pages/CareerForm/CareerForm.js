@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   FormControl,
@@ -17,7 +17,6 @@ import Typography from "@material-ui/core/Typography";
 import { BackgroundSVG } from "../BackgroundSVG";
 
 const useStyles = makeStyles((theme) => ({
-  
   root: {
     display: "flex",
     flexWrap: "wrap",
@@ -40,6 +39,7 @@ export const CareerForm = (props) => {
   const [description, setDescription] = useState("");
   const [upload, setFile] = useState("");
   
+
   async function submitForm() {
     console.warn(name, email, phone_number, technology, description, upload);
     const formData = {
@@ -56,7 +56,7 @@ export const CareerForm = (props) => {
     });
     alert("data has been saved");
   }
-  
+
   const classes = useStyles();
   const theme = createTheme({
     root: {
@@ -70,7 +70,7 @@ export const CareerForm = (props) => {
       },
     },
   });
-  
+
   const style = {
     form: {
       backgroundColor: "#000",
@@ -80,8 +80,8 @@ export const CareerForm = (props) => {
     },
   };
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="careerFormMainDiv">
       <BackgroundSVG />
@@ -103,7 +103,12 @@ export const CareerForm = (props) => {
           <ThemeProvider theme={theme}>
             <Typography component="div" style={style.form}>
               {/* <h1 className="careerHeading"> APPLY NOW</h1> */}
-              <form style={{ textAlign: "justify", margin: "100px 54px 54px 80px " }}>
+              <form
+                style={{
+                  textAlign: "justify",
+                  margin: "100px 54px 54px 80px ",
+                }}
+              >
                 <div>
                   <FormControl fullWidth className={classes.margin}>
                     <InputLabel htmlFor="standard-basic">Your Name</InputLabel>
@@ -185,24 +190,32 @@ export const CareerForm = (props) => {
                   <span style={{fontSize:'1.5rem'}}>UPLOAD YOUR RESUME</span>
                 </div> */}
                 {/* <ButtonGroup size='small'> */}
-                  <Button  variant="contained" component="label">
+                <div
+                  id="drop_file_zone"
+                  ondrop="upload_file(event)"
+                  ondragover="return false"
+                >
+                  <div id="drag_upload_file">
+                    <p className="upload-here">Upload your resume here</p>
+                    <p>
+                      <input onChange = {(e)=>setFile(e.target.files[0])}  type="file" className="upload-img"/>
+                    </p>
+                    {/* <div id="selectfile">
+                    <input type="file" onChange = {(e)=>setFile(e.target.files[0])} />
+                      </div> */}
+                  </div>
+                </div>
+                {/* <Button  variant="contained" component="label">
                     Upload Resume
                     <input type="file" onChange = {(e)=>setFile(e.target.files[0])} />
-                  </Button>
-                <Button variant="contained" onClick={submitForm} color="primary">
+                  </Button> */}
+                <Button
+                  variant="contained"
+                  onClick={submitForm}
+                  color="primary"
+                >
                   Submit
                 </Button>
-                {/* </ButtonGroup> */}
-                {/* <div className="carer-button">
-                  <input type="file" />
-                  <Button
-                    variant="contained"
-                    onClick={submitForm}
-                    color="primary"
-                  >
-                    Submit
-                  </Button>{" "}
-                </div> */}
               </form>
             </Typography>
           </ThemeProvider>

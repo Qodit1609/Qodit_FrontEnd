@@ -157,6 +157,13 @@
   .contact-sec {
     height: 0rem !important;
   }
+  #drop_file_zone {
+    width: auto !important;
+    height: auto !important;
+  }
+  #drag_upload_file {
+    width: auto !important;
+  }
 }
 
 .testimonialCarousel {
@@ -231,6 +238,7 @@
   flex-wrap: "wrap"; */
   /* z-index: 3; */
   margin-top: -15%;
+  margin-bottom: 40px;
 }
 .careerFormMainDiv {
   font-size: 1.5rem;
@@ -243,7 +251,7 @@
   height: 100vh;
   width: 100%;
   background: url(/img/CareerFormImg.jpg) center center no-repeat;
-  margin-bottom: 100px;
+  margin-bottom: 180px;
 }
 
 /* .MuiTypography-root{
@@ -443,9 +451,8 @@ hr {
   border-radius: 0;
   margin: 9px 20px 0 20px;
 }
-#bs-example-navbar-collapse-1 .active{
-
-  border-bottom: 2px solid #919191 ;
+#bs-example-navbar-collapse-1 .active {
+  border-bottom: 2px solid #919191;
   bottom: -1px;
 }
 /* #menu.navbar-default .navbar-nav > li > a:after {
@@ -1150,7 +1157,7 @@ Foot text hover effect
   padding-top: 140px;
 }
 
-#reset{
+#reset {
   padding-top: 100px;
 }
 #otp {
@@ -1161,69 +1168,104 @@ Foot text hover effect
   color: #333;
   padding-top: 100px;
 }
-  
+
 #otp #dialog {
-    border: solid 1px #ccc;
-    margin: 10px auto;
-    padding: 20px 30px;
-    display: inline-block;
-    box-shadow: 0 0 4px #ccc;
-    background-color: #FAF8F8;
-    overflow: hidden;
-    position: relative;
-    max-width: 450px;
+  border: solid 1px #ccc;
+  margin: 10px auto;
+  padding: 20px 30px;
+  display: inline-block;
+  box-shadow: 0 0 4px #ccc;
+  background-color: #faf8f8;
+  overflow: hidden;
+  position: relative;
+  max-width: 450px;
 }
-    
-#otp #dialog   h3 {
-      margin: 0 0 10px;
-      padding: 0;
-      line-height: 1.25;
-    }
-    
-    #otp #dialog span {
-      font-size: 90%;
-    }
-    
-    #otp #form {
-      max-width: 240px;
-      margin: 25px auto 0;
-    }
-      
-    #otp #form input {
-        margin: 0 5px;
-        text-align: center;
-        line-height: 80px;
-        font-size: 50px;
-        border: solid 1px #ccc;
-        box-shadow: 0 0 5px #ccc inset;
-        outline: none;
-        width: 20%;
-        transition: all .2s ease-in-out;
-        border-radius: 3px;
-    }
-        
-    #otp #form input:focus {
-          border-color: #444;
-          box-shadow: 0 0 5px #444 inset;
-        }
-        
-        #otp #form input::selection {
-          background: transparent;
-        }
-    
-      
-        #otp button {
-        margin:  30px 0 50px;
-        width: 100%;
-        padding: 6px;
-        background-color: #444;
-        border: none;
-        text-transform: uppercase;
-      }
-    
-    
-    
-  
+
+#otp #dialog h3 {
+  margin: 0 0 10px;
+  padding: 0;
+  line-height: 1.25;
+}
+
+#otp #dialog span {
+  font-size: 90%;
+}
+
+#otp #form {
+  max-width: 240px;
+  margin: 25px auto 0;
+}
+
+#otp #form input {
+  margin: 0 5px;
+  text-align: center;
+  line-height: 80px;
+  font-size: 50px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 5px #ccc inset;
+  outline: none;
+  width: 20%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 3px;
+}
+
+#otp #form input:focus {
+  border-color: #444;
+  box-shadow: 0 0 5px #444 inset;
+}
+
+#otp #form input::selection {
+  background: transparent;
+}
+
+#otp button {
+  margin: 30px 0 50px;
+  width: 100%;
+  padding: 6px;
+  background-color: #444;
+  border: none;
+  text-transform: uppercase;
+}
+
+#drop_file_zone {
+  border: #999 1px dashed;
+  width: 335px;
+  height: 140px;
+  padding: 20px 8px 8px 8px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+#drag_upload_file {
+  width: 50%;
+  margin: 0 auto;
+}
+#drag_upload_file p {
+  text-align: center;
+}
+#drag_upload_file #selectfile {
+  display: none;
+}
+
+.upload-img {
+  background: transparent !important;
+  padding: 5px 15px !important;
+}
+
+label {
+  cursor: pointer;
+  /* Style as you please, it will become the visible UI component. */
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.upload-here{
+  margin-left: 20px;
+}
+
 /* 
 #login{
   background-color: rgb(228, 229, 247);
