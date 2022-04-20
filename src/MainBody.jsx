@@ -71,12 +71,12 @@ const API = 'https://qoditdev.herokuapp.com';
     </div>
     :
     <div className="loadingClass"> 
-    <Loader
+    {/* <Loader
       type="BallTriangle"
       color="white"
       height={80}
       width={80}
-    />
+    /> */}
     </div>
     )
   )

@@ -20,10 +20,6 @@ export const NewAboutUs = (props) => {
     },
   };
 
-  // useEffect(()=>{
-
-  //   if (data.silce)
-  // },[])
 
   return (
     <div id="new-about">
@@ -45,7 +41,7 @@ export const NewAboutUs = (props) => {
         data.slice(0, 2).map((data, index) =>
           index % 2 == 0 ? (
             <section className="sec-about">
-              <div class="element">
+              <div className="element">
                 <div className="container">
                   <div className="row">
                     <div className="col-sm-12 col-md-7">
@@ -112,7 +108,7 @@ export const NewAboutUs = (props) => {
                         data-aos="zoom-in-up"
                         data-aos-duration="3000"
                       >
-                        <img src={value.image} className="img-fluid" alt="" />
+                        <img src={value.image} className="img-fluid" alt="chooseus" />
                       </div>
                       <h3>{value.title}</h3>
                       <p>{value.description}</p>

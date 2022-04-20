@@ -16,13 +16,14 @@ export const Services = (props) => {
           {showServices
             ? showServices.map((d, i) => (
                 <div key={`${d.id}-${i}`} className='col-md-4'>
-                  {' '}
+                  <a style={{color:"#777777"}} href="./services">
                   <i data-aos="flip-up"  data-aos-duration="1500" className={`${d.alt}`}>
                    </i>
                   <div className='service-desc'>
                     <h3>{d.title}</h3>
                     <p style={paraLength} >{d.body}</p>
                   </div>
+                  </a>
                 </div>
               ))
             : 'loading'}

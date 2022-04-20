@@ -106,7 +106,7 @@ export const CareerForm = (props) => {
               <form
                 style={{
                   textAlign: "justify",
-                  margin: "100px 54px 54px 80px ",
+                  margin: "200px 54px 54px 80px ",
                 }}
               >
                 <div>
@@ -196,9 +196,8 @@ export const CareerForm = (props) => {
                   ondragover="return false"
                 >
                   <div id="drag_upload_file">
-                    <p className="upload-here">Upload your resume here</p>
                     <p>
-                      <input onChange = {(e)=>setFile(e.target.files[0])}  type="file" className="upload-img"/>
+                      <input onChange = {(e)=>setFile(e.target.files[0])}  type="file" className=""/>
                     </p>
                     {/* <div id="selectfile">
                     <input type="file" onChange = {(e)=>setFile(e.target.files[0])} />

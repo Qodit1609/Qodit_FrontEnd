@@ -67,7 +67,7 @@ const App = () => {
       </Router>
       :
        <div className="loadingClass">
-        <Loader type="BallTriangle" color="white" height={80} width={80} />
+        {/* <Loader type="BallTriangle" color="white" height={80} width={80} /> */}
       </div> 
 }
     </div>

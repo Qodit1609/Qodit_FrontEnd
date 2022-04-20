@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPage = withRouter((props) => {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    axios.get("https://qoditdev.herokuapp.com/footer").then((res) => {
+      setData(res.data);
+    });
+    window.scrollTo(0, 0);
+  }, []);
   const { location } = props;
   const style = {
     li: {
@@ -14,29 +23,30 @@ const FooterPage = withRouter((props) => {
       color: "#37474F",
       fontWeight: 400,
       fontSize: "1.5rem",
+      
     },
   };
-  
-  function checkRouter(){
-    if(location){
-      switch (location.pathname){
-        case '/login':
-          return true
-        case '/admin/dashboard':
+
+  function checkRouter() {
+    if (location) {
+      switch (location.pathname) {
+        case "/login":
           return true;
-        case '/hr/dashboard':
+        case "/admin/dashboard":
           return true;
-        case '/sales/dashboard':
+        case "/hr/dashboard":
           return true;
-        default :
+        case "/sales/dashboard":
+          return true;
+        default:
           return false;
       }
     }
   }
 
-  if (checkRouter()){
+  if (checkRouter()) {
     return null;
-  } 
+  }
   return (
     <div>
       <div style={{ position: "absolute", width: "100%" }}>
@@ -55,44 +65,13 @@ const FooterPage = withRouter((props) => {
         <MDBContainer fluid className="text-center text-md-left">
           <MDBRow>
             <MDBCol md="9" className="text-left">
-              <h2 style={{ color: "black" }} className="title  footerTitle">
-                Quick links
-              </h2>
+              {data &&
+                data.slice(0, 1).map((data1, index) => (
+                  <h2 style={{ color: "black" }} className="title  footerTitle">
+                    {data1.title}
+                  </h2>
+                ))}
               <MDBCol color="black" md="3" className=" background">
-                <ul>
-                  <li className="list-unstyled Footerbg footerAnch">
-                    <a href="/" style={style.li}>
-                      <p className="text-dark">Home</p>
-                    </a>
-                  </li>
-                  <li className="list-unstyled">
-                    <a href="/about" style={style.li}>
-                      <p className="text-dark">About</p>
-                    </a>
-                  </li>
-                  <li className="list-unstyled">
-                    <a href="/services" style={style.li}>
-                      <p className="text-dark">Services</p>
-                    </a>
-                  </li>
-                  <li className="list-unstyled">
-                    <a href="/FEATURES" style={style.li}>
-                      <p className="text-dark">Features</p>
-                    </a>
-                  </li>
-                  <li className="list-unstyled">
-                    <a href="/career" style={style.li}>
-                      <p className="text-dark">Career</p>
-                    </a>
-                  </li>
-                  <li className="list-unstyled">
-                    <a href="/contact_us" style={style.li}>
-                      <p className="text-dark">Contact Us</p>
-                    </a>
-                  </li>
-                </ul>
-              </MDBCol>
-              <MDBCol md="3" className="background">
                 <ul>
                   <li className="list-unstyled Footerbg footerAnch">
                     <a href="/" style={style.li}>
@@ -135,42 +114,38 @@ const FooterPage = withRouter((props) => {
                 <ul>
                   <li className="list-unstyled">
                     <a href="https://www.google.com/maps/search/+1200,+Sheridan,+WY+82801,+USA/@44.7974184,-106.9662109,14z/data=!3m1!4b1">
-                      <h4 style={style.contactUsInLine}>
-                        <i className="fas fa-map-marker-alt"></i>
+                      <h4 className="contact-us" style={style.contactUsInLine}>
+                        <i className="fas fa-map-marker-alt"></i> &nbsp;
                         {props.data ? props.data.addressUsa : "loading"}
                       </h4>
                     </a>
                   </li>
                   <li className="list-unstyled">
                     <a href="https://www.google.com/maps/place/TheRapidHire+Private+Limited/@22.7405008,75.9009652,17z/data=!3m1!4b1!4m5!3m4!1s0x3962e32b2894590f:0x4e73ebc1261cc50!8m2!3d22.7404959!4d75.9031539">
-                      <h4 style={style.contactUsInLine}>
-                        <i className="fas fa-map-marker-alt"></i>
+                      <h4 className="contact-us" style={style.contactUsInLine}>
+                        <i className="fas fa-map-marker-alt"></i> &nbsp;
                         {props.data ? props.data.addressInd : "loading"}
                       </h4>
                     </a>
                   </li>
                   <li className="list-unstyled">
                     <a href="mailto:info@qodit.io">
-                      {" "}
-                      <h4 style={style.contactUsInLine}>
-                        {" "}
-                        <i className="fas fa-envelope"></i>{" "}
+                      <h4 className="contact-us" style={style.contactUsInLine}>
+                        <i className="fas fa-envelope"></i> &nbsp;
                         {props.data ? props.data.email : "loading"}
                       </h4>
                     </a>
                   </li>
                   <li className="list-unstyled">
                     <a href={`tel:${props.data ? props.data.phone : " "}`}>
-                      {" "}
-                      <h4 style={style.contactUsInLine}>
-                        <i className="fa fa-phone"></i>{" "}
-                        {props.data ? props.data.phone : "loading"}{" "}
+                      <h4 className="contact-us" style={style.contactUsInLine}>
+                        <i className="fa fa-phone"></i> &nbsp;
+                        {props.data ? props.data.phone : "loading"}
                       </h4>
-                    </a>
-                    {"  "}
+                    </a> &nbsp;
                     <a href={`tel:${props.data ? props.data.phone : " "}`}>
-                      <h4 style={style.contactUsInLine}>
-                        <i className="fa fa-phone"></i>
+                      <h4 className="contact-us" style={style.contactUsInLine}>
+                        <i className="fa fa-phone"></i>  &nbsp;
                         {props.data ? props.data.phoneInd : "loading"}
                       </h4>
                     </a>
@@ -186,12 +161,12 @@ const FooterPage = withRouter((props) => {
                   <p style={{ color: "black", fontSize: "12px" }}>
                     Copyright © 2021 Qodit All Rights Reserved.
                     <br />
-                    Web Designed by QoditQodit
+                    Web Designed by Qodit &nbsp;
                     <a href="/policy" rel="nofollow" style={{ color: "grey" }}>
-                      Privacy Policies 
-                    </a>
+                      Privacy Policies
+                    </a>  &nbsp;  
                     <a href="/term" rel="nofollow" style={{ color: "grey" }}>
-                     Terms &amp; Conditions
+                      Terms &amp; Conditions
                     </a>
                   </p>
                 </div>
@@ -202,6 +177,6 @@ const FooterPage = withRouter((props) => {
       </MDBFooter>
     </div>
   );
-})
+});
 
 export default FooterPage;

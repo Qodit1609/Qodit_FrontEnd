@@ -42,7 +42,7 @@
 }
 
 .background-svg {
-  margin-top: -12%;
+  margin-top: -18%;
   position: absolute;
   width: 100%;
 }
@@ -52,7 +52,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 50vh;
+  height: 40vh;
 }
 
 .fw-light {
@@ -181,6 +181,10 @@
   background: -webkit-linear-gradient(to top, #000000, #434343);
   background: linear-gradient(to top, #000000, #434343);
   color: white;
+}
+
+.background-header {
+  background: linear-gradient(to top, #000000, #434343);
 }
 .rec-arrow-right {
   background: #000000;
@@ -853,9 +857,9 @@ header .intro-text {
   height: 6rem;
 }
 #contact_us {
-  padding: 100px 0 60px 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
-    url(../img/join_us.jpg) center center no-repeat;
+  padding: 40px 0 60px 0;
+  /* background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+    url(../img/join_us.jpg) center center no-repeat; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -985,6 +989,60 @@ label {
   color: #608dfd;
   background: rgb(0, 0, 0);
 }
+
+.contact-title {
+  text-align: center;
+  color: #000;
+}
+
+.form-sec {
+  padding-top: 50px;
+}
+
+.form-contact {
+  padding-top: 70px;
+}
+
+.form-contact .form-control {
+  border-radius: 10px;
+  padding: 10px;
+  height: 50px;
+}
+
+.form-contact label {
+  padding-left: 10px;
+}
+
+.form-contact textarea {
+  height: 100px !important;
+}
+
+.info-column .inner-column {
+  position: relative;
+  padding: 30px 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  background: #ffff;
+}
+
+.info-column .inner-column .content {
+  position: relative;
+  padding-left: 10px;
+}
+
+.inner-column i {
+  left: 0;
+  top: 0;
+  color: #000;
+  font-size: 44px;
+  line-height: 1em;
+  text-align: center;
+}
+
+.inner-column h5 {
+  text-transform: lowercase;
+}
+
 /* Footer Section*/
 #footer {
   /* background: #f6f6f6; */
@@ -1262,10 +1320,13 @@ label {
   z-index: -1;
 }
 
-.upload-here{
+.upload-here {
   margin-left: 20px;
 }
 
+.contact-us {
+  text-align: center;
+}
 /* 
 #login{
   background-color: rgb(228, 229, 247);
