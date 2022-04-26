@@ -10,7 +10,6 @@ import { Navigation } from "./components/navigation";
 import JsonData from "./data/data.json";
 import FooterPage from "./components/Footer";
 import axios from "axios";
-import { MoreAboutUs } from "./components/Pages/About/MoreAbout";
 import MoreServices from "./components/Pages/MoreServices/MoreServices";
 import { SideBar } from "./components/Side_bar";
 import Loader from "react-loader-spinner";
@@ -22,6 +21,7 @@ import Terms from "./components/Pages/Terms/Terms";
 import Forgot from "./Admin/Forgot";
 import Reset from "./Admin/Reset";
 import Otp from "./Admin/Otp";
+import NewAboutUs from "./components/Pages/About/AboutUs";
 
 const App = () => {
   const [navBar, setNavBar] = useState(null);
@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/career" component={CareerForm} />
           <Route exact path="/login"  component={AdminSignIn} />
           <Route path="/contact_us" component={ContactUs} />
-          <Route path="/about" component={MoreAboutUs} />
+          <Route path="/about" component={NewAboutUs} />
           <Route path="/services" component={MoreServices} />
           <Route path="/features" component={NewFeature} />
           <Route path="/admin/dashboard" component={Dashboard} />
@@ -60,14 +60,12 @@ const App = () => {
           <Route path="/forgot" component={Forgot} />
           <Route path="/reset" component={Reset} />
           <Route path="/otp" component={Otp} />
-
-
         </Switch>
         <FooterPage data={landingPageData.Contact} />
       </Router>
       :
        <div className="loadingClass">
-        {/* <Loader type="BallTriangle" color="white" height={80} width={80} /> */}
+        <Loader type="BallTriangle" color="white" height={80} width={80} />
       </div> 
 }
     </div>

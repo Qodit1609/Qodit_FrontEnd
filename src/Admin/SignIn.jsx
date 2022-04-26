@@ -105,7 +105,7 @@ export default function AdminSignIn() {
     let loginApi = await axios
       .post(`${API}/api/auth/login`, { email, password })
       .then(({ data }) => {
-        console.log(data);
+  
         setMessage(data.message);
         setData(data.data);
         setError(false);
@@ -113,7 +113,6 @@ export default function AdminSignIn() {
       })
       .catch(function (error) {
         setError(true);
-        console.log("invalid username or password");
         return Promise.reject(error);
       });
   };
@@ -122,7 +121,6 @@ export default function AdminSignIn() {
     let pathAdmin = `/admin/dashboard`;
     let pathHR = `/hr/dashboard`;
     let pathSales = `/sales/dashboard`;
-    console.log(data);
     if (data) {
       switch (data.roleName) {
         case "admin":
@@ -174,7 +172,6 @@ export default function AdminSignIn() {
               onFocus= {(e) => setError(false)}
               onChange={(e) => setEmail(e.target.value)}
               helperText={error ? "Incorrect email." : null}
-              required
             />
 
             <TextField
@@ -191,7 +188,7 @@ export default function AdminSignIn() {
               onFocus= {(e) => setError(false)}
               onChange={(e) => setPassword(e.target.value)}
               helperText={error ? "Incorrect password." : null}
-              required
+              
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

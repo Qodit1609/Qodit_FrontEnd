@@ -10,7 +10,6 @@ export const NewFeature = (props) => {
     });
     window.scrollTo(0, 0);
   }, []);
-  console.log("data", data);
 
   return (
     <div id="service">
@@ -44,7 +43,6 @@ export const NewFeature = (props) => {
                       <img
                         data-aos="fade-left"
                         data-aos-duration="1500"
-                        data-aos-duration="1500"
                         src={data.image}
                         alt=""
                       />
@@ -61,7 +59,6 @@ export const NewFeature = (props) => {
                     <div className="service-image">
                       <img
                         data-aos="fade-left "
-                        data-aos-duration="1500"
                         data-aos-duration="1500"
                         src={data.image}
                         alt=""

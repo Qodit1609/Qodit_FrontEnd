@@ -45,6 +45,7 @@ export const Navigation = withRouter((props) => {
         </div>
 
         <div
+        
           className="collapse navbar-collapse"
           id="bs-example-navbar-collapse-1"
         >

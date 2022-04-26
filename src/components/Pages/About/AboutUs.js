@@ -3,9 +3,7 @@ import { BackgroundSVG } from "../BackgroundSVG";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import axios from "axios";
 
-import "./About.css";
-
-export const NewAboutUs = (props) => {
+export const NewAboutUs = () => {
   const [data, setData] = useState("");
   useEffect(() => {
     axios.get("https://qoditdev.herokuapp.com/aboutusChild").then((res) => {

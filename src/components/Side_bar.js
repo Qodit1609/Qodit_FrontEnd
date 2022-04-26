@@ -11,9 +11,6 @@ import { withRouter } from "react-router";
 
 
 export const SideBar = withRouter(({ location }) => {
-  // if (location.pathname.match(/admin/)) {
-  //   return null;
-  // }
   function checkRouter(){
     if(location){
       switch (location.pathname){

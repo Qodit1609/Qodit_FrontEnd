@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box,
   FormControl,
   Input,
   InputLabel,
@@ -9,7 +8,6 @@ import {
   InputAdornment,
   createTheme,
   ThemeProvider,
-  ButtonGroup,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -41,7 +39,6 @@ export const CareerForm = (props) => {
   
 
   async function submitForm() {
-    console.warn(name, email, phone_number, technology, description, upload);
     const formData = {
       name,
       email,
@@ -76,14 +73,13 @@ export const CareerForm = (props) => {
       backgroundColor: "#000",
       borderRadius: "2rem",
       padding: "60px 40px 10px 40px",
-      // paddingTop:'10rem',
     },
   };
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="careerFormMainDiv">
+    <div className="">
       <BackgroundSVG />
       <div
         className="service-bg cover-background"

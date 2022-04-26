@@ -21,7 +21,7 @@
         ]
     },
     "Services": [{
-            "icon": "fas fa-code",
+            "icon": "fa fa-code",
             "image":"img/Services/system.png",
             "name": "Web Development",
             "text": "We provide designing, coding, programming and modifying websites, from layout to function and according to a client's specifications. Strive to create visually appealing sites that feature user-friendly design and clear navigation."
@@ -33,13 +33,13 @@
             "text": "We believe in developing applications that advance our clients digital strategies. We work with clients to build highly-customized applications and to shift their development practices to Agile."
         },
         {
-            "icon": "fas fa-chart-pie",
+            "icon": "fa fa-code",
             "image":"img/Services/system.png",
             "name": "MVP Development",
             "text": "Atlas Systems provides you with comprehensive Database Support services that take care of all your database support requirements. Our team of experts will work with you to recommend and perform every database support task ."
         },
         {
-            "icon": "fas fa-tools",
+            "icon": "fas fa-cogs",
             "image":"img/Services/system.png",
             "name": "New Product Development",
             "text": "Build, Deploy, and Manage Websites, Apps or Processes On AWS Secure, Reliable Network. Sign Up for a Free Account & Experience AWS Secure. Easily Manage Clusters."

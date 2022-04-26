@@ -115,7 +115,7 @@ const FooterPage = withRouter((props) => {
                   <li className="list-unstyled">
                     <a href="https://www.google.com/maps/search/+1200,+Sheridan,+WY+82801,+USA/@44.7974184,-106.9662109,14z/data=!3m1!4b1">
                       <h4 className="contact-us" style={style.contactUsInLine}>
-                        <i className="fas fa-map-marker-alt"></i> &nbsp;
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
                         {props.data ? props.data.addressUsa : "loading"}
                       </h4>
                     </a>
@@ -123,7 +123,7 @@ const FooterPage = withRouter((props) => {
                   <li className="list-unstyled">
                     <a href="https://www.google.com/maps/place/TheRapidHire+Private+Limited/@22.7405008,75.9009652,17z/data=!3m1!4b1!4m5!3m4!1s0x3962e32b2894590f:0x4e73ebc1261cc50!8m2!3d22.7404959!4d75.9031539">
                       <h4 className="contact-us" style={style.contactUsInLine}>
-                        <i className="fas fa-map-marker-alt"></i> &nbsp;
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;
                         {props.data ? props.data.addressInd : "loading"}
                       </h4>
                     </a>
@@ -131,7 +131,7 @@ const FooterPage = withRouter((props) => {
                   <li className="list-unstyled">
                     <a href="mailto:info@qodit.io">
                       <h4 className="contact-us" style={style.contactUsInLine}>
-                        <i className="fas fa-envelope"></i> &nbsp;
+                        <i className="fa fa-envelope"></i> &nbsp;
                         {props.data ? props.data.email : "loading"}
                       </h4>
                     </a>

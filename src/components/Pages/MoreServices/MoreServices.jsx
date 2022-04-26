@@ -1,5 +1,4 @@
 import React, {useState,useEffect} from "react";
-import "./MoreServices.css";
 import { BackgroundSVG } from "../BackgroundSVG";
 import axios from 'axios';
 
@@ -12,13 +11,12 @@ export const MoreServices = (props) => {
         });
         window.scrollTo(0, 0) 
     },[])
-    console.log('data', data)
 
-     const style = {
-        icon:{
-            fontSize:'4rem',
-        }
-    }
+    //  const style = {
+    //     icon:{
+    //         fontSize:'4rem',
+    //     }
+    // }
    
   return (
     <div id="service">
@@ -49,7 +47,6 @@ export const MoreServices = (props) => {
               <img
                 data-aos="fade-left"
                 data-aos-duration="1500"
-                data-aos-duration="1500"
                 src={data.image}
                 alt=""
               />
@@ -66,7 +63,6 @@ export const MoreServices = (props) => {
             <div className="service-image">
               <img
                 data-aos="fade-left "
-                data-aos-duration="1500"
                 data-aos-duration="1500"
                 src={data.image}
                 alt=""

@@ -19,7 +19,6 @@ import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "./Sales.css";
 
 const columns = [
   { id: "id", label: "Id", minWidth: 170 },
